@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int factorial (int n)
+{
+    if (n==1)
+    {
+        return 1;
+    }
+    int ans=n*factorial(n-1);
+    return ans;
+}
+int main() {
+    // Write C++ code here
+    cout<<"Enter the number whose factorial you want: ";
+    int n;
+cin>>n;
+    int fact =factorial(n);
+cout <<fact;
+    return 0;
+}
