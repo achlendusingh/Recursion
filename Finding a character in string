@@ -1,0 +1,27 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+void findString(string s,char ch,int i)
+{
+ if(i>=s.length())
+ {
+     cout<<"Character not found"<<endl;
+     return;
+ }
+ if(s[i]==ch)
+ {
+ cout<<"Found the character"<<endl;
+ return;
+ }
+ findString(s,ch,i+1);
+}
+int main() {
+    // Write C++ code here
+string str="HelloWorld";
+cout<<"Enter the character you want to find: ";
+char ch;
+cin>>ch;
+findString(str,ch,0);
+
+    return 0;
+}
