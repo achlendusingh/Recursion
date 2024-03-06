@@ -1,0 +1,23 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+void dig(int n)
+{
+ if(n==0)
+ return;
+ 
+ dig(n/10);
+ cout<<n%10<<" ";
+}
+int main() {
+    // Write C++ code here
+int n;
+cout<<"Enter the number: ";
+cin>>n;
+if(n==0)
+cout<<0<<endl;
+else
+dig(n);
+
+    return 0;
+}
