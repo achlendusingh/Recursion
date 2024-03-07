@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+void lastocc(string s,char ch,int i,int &ans)
+{
+     if(i>=s.length())
+     {
+         return;
+     }
+     if(s[i]==ch)
+     ans=i;
+     lastocc(s,ch,i+1,ans);
+    }
+int main() {
+    // Write C++ code here
+    string s="abcddedgdwer";
+    char ch='d';
+    int ans=-1;
+    lastocc(s,ch,0,ans);
+    cout<<"Last occurence of "<<ch<<" is: "<<ans;
+    return 0;
+}
