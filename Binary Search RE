@@ -1,0 +1,41 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <vector>
+using namespace std;
+int binarySearch(vector <int> &v,int low,int high,int key)
+{
+    if(low>high)
+    {
+        return -1;
+    }
+    int mid=low+(high-low)/2;
+    if (v[mid]==key)
+    {
+        return mid;
+    }
+    else if(v[mid]<key)
+    {
+        binarySearch(v,mid+1,high,key);
+    }
+    else
+    {
+         binarySearch(v,low,mid-1,key);
+    }
+}
+int main() {
+    // Write C++ code here
+//   int arr[]={23,12,45,78,45,90,89,56,999};
+  vector<int>v{12,23,34,45,56,67,78,89,90};
+  int n=v.size();
+  int low=0;
+  int high=n-1;
+  int key;
+  cout<<"Enter the key you want to search"<<endl;
+  cin>>key;
+  int ans=binarySearch(v,low,high,key);
+ if(ans==-1)
+ cout<<"Key not found"<<endl;
+ else
+ cout<<"Key found at "<<ans<<" index"<<endl; 
+    return 0;
+}
