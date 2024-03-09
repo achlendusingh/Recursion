@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+void printSubarray(int arr[],int start,int end,int n)
+{
+     if (start>=n)
+     {
+         return;
+     }
+     int i;
+    for(i=start;i<=end;i++)
+    {
+        cout<<arr[i];
+    }
+    cout<<endl;
+      if(end==n-1)
+    {
+        start+=1;
+        printSubarray(arr,start,start,n);
+    }
+    else
+    {
+        printSubarray(arr,start,end+1,n);
+    }
+  
